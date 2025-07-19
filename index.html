@@ -4,267 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracy Lan - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .logo-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #333;
-        }
-
-        .hero {
-            margin-bottom: 80px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 30px;
-            line-height: 1.2;
-            max-width: 800px;
-        }
-
-        .hero p {
-            font-size: 16px;
-            font-weight: 600;
-            color: #666;
-            max-width: 600px;
-            margin-bottom: 40px;
-            line-height: 1.4;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-
-        .project-card:nth-child(4) .project-image {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-
-        .project-info {
-            padding: 24px;
-        }
-
-        .project-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 12px;
-        }
-
-        .project-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 16px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .project-link {
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .link-primary {
-            background-color: #333;
-            color: white;
-        }
-
-        .link-primary:hover {
-            background-color: #555;
-        }
-
-        .link-secondary {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        .link-secondary:hover {
-            background-color: #e0e0e0;
-        }
-
-        .contact-section {
-            text-align: center;
-            padding: 60px 0;
-            margin-top: 40px;
-        }
-
-        .contact-section h2 {
-            font-size: 32px;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .contact-section p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 50%;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 20px;
-        }
-
-        .contact-link:hover {
-            transform: translateY(-2px);
-            background: #555;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -285,7 +25,7 @@
         </section>
 
         <section id="projects">
-            <h2 class="section-title">Selected Projects</h2>
+            <h2 class="section-title">Portfolio Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
@@ -317,11 +57,11 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        Portfolio Site
+                        Technical Documentation Page
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Personal Portfolio</h3>
-                        <p class="project-description">This responsive portfolio website showcasing my projects and skills. Built with HTML, CSS, and JavaScript.</p>
+                        <h3 class="project-title">Python Documentation</h3>
+                        <p class="project-description">This is a technical page for introduces the basics of Python.</p>
                         <div class="project-links">
                             <a href="#" class="project-link link-primary">View Project</a>
                             <a href="#" class="project-link link-secondary">Source Code</a>
@@ -347,10 +87,10 @@
 
         <section id="contact" class="contact-section">
             <h2>Let's Connect!</h2>
-            <p>I'm always excited to connect with fellow developers and learn from the community.</p>
+            <p>I'm excited to connect with fellow developers and learn from the community.</p>
             <div class="contact-links">
-                <a href="mailto:tracy@example.com" class="contact-link" title="Email">@</a>
-                <a href="#" class="contact-link" title="GitHub">G</a>
+                <a href="mailto:tracylan12@gmail.com" class="contact-link" title="Email">@</a>
+                <a href="https://github.com/FluffyPook" class="contact-link" title="GitHub">G</a>
                 <a href="#" class="contact-link" title="LinkedIn">in</a>
                 <a href="#" class="contact-link" title="Twitter">X</a>
             </div>
