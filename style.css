@@ -234,6 +234,33 @@
             background: #555;
         }
 
+
+
+.word-strip {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+.word-strip-container {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.word-strip span {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
